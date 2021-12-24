@@ -85,7 +85,7 @@ def magic(files, home_dir, text_box, split_at_combobox):
         output_file_1.write(stream)
         for page in range(split_at, end):
             output_file_2.addPage(input_file.getPage(page))
-        stream = open(f'{home_dir}{os.sep}page_{split_at}_to_{end}.pdf', 'wb')
+        stream = open(f'{home_dir}{os.sep}page_{split_at+1}_to_{end}.pdf', 'wb')
         output_file_2.write(stream)
         text_box.delete('1.0', 'end')
         text_box.insert('1.0', 'PDF files has been splitted successfully!\n')
